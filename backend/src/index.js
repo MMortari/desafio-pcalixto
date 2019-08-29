@@ -1,23 +1,40 @@
 const restify = require('restify');
 
-const app = restify.createServer({ 
-  name: "agenda-contato"
-});
+require('./database');
 
-// Controllers
+const app = restify.createServer();
+
+app.use(restify.plugins.bodyParser());
+
+/**
+ * Controllers
+ */
 const AgendaController = require('./app/controllers/Agenda');
 
-// Middlewares
+/**
+ * Middlewares
+ */
 app.use((req, res, next) => {
   next();
 })
 
-// Routes
+/**
+ * Routes
+ */
+// Lista todos os agendamentos
 app.get('/', AgendaController.list);
+// Lista um os agendamentos
+app.get('/:id', AgendaController.listOne);
+// Armazena um agendamento
 app.post('/', AgendaController.store);
-app.put('/', AgendaController.update);
-app.del('/', AgendaController.delete);
+// Atualiza um agendamento
+app.put('/:id', AgendaController.update);
+// Apaga um agendamento
+// Aparentemente o Restify não tem o método DELETE
+app.post('/:id', AgendaController.delete); 
 
-// Server
+/**
+ * Server
+ */
 const listenPort = process.env.PORT || 3333;
 app.listen(listenPort, () => console.log(`Server listening on port ${listenPort}`));

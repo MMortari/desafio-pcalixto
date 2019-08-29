@@ -1,14 +1,21 @@
 const Sequelize = require('sequelize');
 
-// Models
-const AgendaModel = require('./../app/models/Agenda');
+const Agendamentos = require('../app/models/Agendamentos');
 
-// Database config
-const databaseConfig = require('./../config/database');
+const databaseConfig = require('../config/database');
 
-// Conexão
-const db = new Sequelize(databaseConfig);
+const models = [Agendamentos];
 
-AgendaModel.init(db);
+class Database {
+  constructor() {
+    this.init();
+  }
 
-module.exports = db;
+  init() {
+    this.connection = new Sequelize(databaseConfig);
+
+    models.map(model => model.init(this.connection))
+  }
+}
+
+module.exports = new Database();
