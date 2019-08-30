@@ -55,6 +55,14 @@ table tr td, table tr th {
   cursor: pointer;
 }
 
+.btn {
+  cursor: pointer;
+}
+
+.btn-add {
+  width: 100%
+}
+
 /* form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

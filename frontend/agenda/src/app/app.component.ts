@@ -61,9 +61,8 @@ export class AppComponent implements OnInit {
   }
 
   deleteContact(id) {
-    this.contactsService.delete(id).subscribe(() => {
-      this.contacts = this.contacts.filter(contact => contact.id != id);
-    })
+    this.contactsService.delete(id).subscribe(() => {})
+    this.contacts = this.contacts.filter(contact => contact.id != id);
   }
 
 }
