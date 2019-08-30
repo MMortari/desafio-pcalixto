@@ -18,7 +18,7 @@ app.use(cors.actual);
 /**
  * Controllers
  */
-const AgendaController = require('./app/controllers/Agenda');
+const ContactsController = require('./app/controllers/Contacts');
 
 /**
  * Middlewares
@@ -31,16 +31,16 @@ app.use((req, res, next) => {
  * Routes
  */
 // Lista todos os agendamentos
-app.get('/', AgendaController.list);
+app.get('/', ContactsController.list);
 // Lista um os agendamentos
-app.get('/:id', AgendaController.listOne);
+app.get('/:id', ContactsController.listOne);
 // Armazena um agendamento
-app.post('/', AgendaController.store);
+app.post('/', ContactsController.store);
 // Atualiza um agendamento
-app.put('/:id', AgendaController.update);
+app.put('/:id', ContactsController.update);
 // Apaga um agendamento
 // Aparentemente o Restify não tem o método DELETE
-app.post('/:id', AgendaController.delete); 
+app.post('/:id', ContactsController.delete); 
 
 /**
  * Server

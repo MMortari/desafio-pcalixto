@@ -1,9 +1,9 @@
-const ModelAgendamento = require('../../models/Agendamentos');
+const ModelContact = require('../../models/Contacts');
 
 class Agenda {
 
   async list(req, res, next) {
-    const agenda = await ModelAgendamento.findAll();
+    const agenda = await ModelContact.findAll();
 
     res.send(agenda);
 
@@ -11,7 +11,7 @@ class Agenda {
   }
 
   async listOne(req, res, next) {
-    const agenda = await ModelAgendamento.findOne({
+    const agenda = await ModelContact.findOne({
       where: { id: req.params.id }
     });
 
@@ -27,7 +27,7 @@ class Agenda {
   async store(req, res, next) {
     const data = req.body;
     
-    const response = await ModelAgendamento.create(data);
+    const response = await ModelContact.create(data);
 
     res.send(response);
     return next();
@@ -37,17 +37,17 @@ class Agenda {
     const { id } = req.params;
     const data = req.body;
 
-    const find = await ModelAgendamento.findOne({
+    const find = await ModelContact.findOne({
       where: { id }
     })
 
     let response = { error: "Não há nenhum registro com esse Id" };
 
     if(find) {
-      await ModelAgendamento.update(data, {
+      await ModelContact.update(data, {
         where: { id },
       });
-      response = { msg: "Agendamento atualizado com sucesso" };
+      response = { msg: "Contato atualizado com sucesso" };
     }
 
     res.send(response);
@@ -57,14 +57,14 @@ class Agenda {
   async delete(req, res, next) {
     const { id } = req.params;
 
-    const find = await ModelAgendamento.findOne({
+    const find = await ModelContact.findOne({
       where: { id }
     })
 
     let response = { error: "Não há nenhum registro com esse Id" };
 
     if(find) {
-      response = await ModelAgendamento.destroy({
+      response = await ModelContact.destroy({
         where: { id },
       });
     }

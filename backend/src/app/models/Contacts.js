@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-class Agendamento extends Sequelize.Model {
+class Contacts extends Sequelize.Model {
 
   static init(sequelize) {
     super.init(
@@ -20,4 +20,4 @@ class Agendamento extends Sequelize.Model {
 
 }
 
-module.exports = Agendamento;
+module.exports = Contacts;

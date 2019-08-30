@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize');
 
-const Agendamentos = require('../app/models/Agendamentos');
+const Contacts = require('../app/models/Contacts');
 
 const databaseConfig = require('../config/database');
 
-const models = [Agendamentos];
+const models = [Contacts];
 
 class Database {
   constructor() {
