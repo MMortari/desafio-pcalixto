@@ -1,10 +1,19 @@
 const restify = require('restify');
+const corsMiddleware = require("restify-cors-middleware");  
 
 require('./database');
+
+const cors = corsMiddleware({  
+  origins: ["*"],
+  allowHeaders: ["Authorization"],
+  exposeHeaders: ["Authorization"]
+});
 
 const app = restify.createServer();
 
 app.use(restify.plugins.bodyParser());
+app.pre(cors.preflight);  
+app.use(cors.actual);  
 
 /**
  * Controllers
