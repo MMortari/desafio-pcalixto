@@ -1997,6 +1997,13 @@ resolve@^1.5.0:
   dependencies:
     path-parse "^1.0.6"
 
+restify-cors-middleware@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/restify-cors-middleware/-/restify-cors-middleware-1.1.1.tgz#06688502fa08b8c62783103844c87dcfc30dcf3e"
+  integrity sha1-BmiFAvoIuMYngxA4RMh9z8MNzz4=
+  dependencies:
+    assert-plus "^1.0.0"
+
 restify-errors@^8.0.0:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/restify-errors/-/restify-errors-8.0.1.tgz#9f970cb16afad652379b49b4d6a666f7426c2b92"
@@ -2717,9 +2724,9 @@ xdg-basedir@^3.0.0:
   integrity sha1-SWsswQnsqNus/i3HK2A8F8WHCtQ=
 
 y18n@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
-  integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.1.tgz#8db2b83c31c5d75099bb890b23f3094891e247d4"
+  integrity sha512-wNcy4NvjMYL8gogWWYAO7ZFWFfHcbdbE57tZO8e4cbpj8tfUcwrwqSl3ad8HxpYWCdXcJUCeKKZS62Av1affwQ==
 
 yallist@^2.1.2:
   version "2.1.2"
